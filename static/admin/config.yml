@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  repo: banhae/
+  repo: banhae/blog
   branch: master
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
