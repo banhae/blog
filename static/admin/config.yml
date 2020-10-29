@@ -1,16 +1,8 @@
 backend:
   name: git-gateway
   repo: banhae/blog
-  commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
-
 media_folder: static/assets
 public_folder: /assets
-
 collections:
   - name: etc
     label: Etc
