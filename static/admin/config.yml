@@ -6,7 +6,7 @@ public_folder: /assets
 collections:
   - name: etc
     label: Etc
-    folder: contnet/blog/etc
+    folder: blog/etc
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -17,7 +17,7 @@ collections:
       - { name: body, label: Body, widget: markdown }
   - name: react
     label: React
-    folder: contnet/blog/react
+    folder: blog/react
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -25,4 +25,13 @@ collections:
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: category, label: Category }
+      - { name: body, label: Body, widget: markdown }
+  - name: blog
+    label: Blog
+    folder: blog
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
