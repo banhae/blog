@@ -1,15 +1,37 @@
 backend:
   name: git-gateway
-  repo: banhae/blog
+  repo: banhae/
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
 media_folder: static/assets
 public_folder: /assets
+
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: etc
+    label: Etc
+    folder: contnet/blog/etc
     create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - { name: path, label: Path }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: category, label: Category }
+      - { name: body, label: Body, widget: markdown }
+  - name: react
+    label: React
+    folder: contnet/blog/react
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { name: path, label: Path }
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: category, label: Category }
       - { name: body, label: Body, widget: markdown }
