@@ -4,19 +4,22 @@ import { graphql } from 'gatsby'
 import { rhythm } from '../utils/typography'
 import * as Lang from '../constants'
 
+import '../styles/resume.scss'
+
 export default ({ data }) => {
   const resumes = data.allMarkdownRemark.edges
 
   const resume = resumes
-    .filter(({ node }) => node.frontmatter.lang === Lang.ENGLISH)
+    .filter(({ node }) => node.frontmatter.lang === Lang.KOREAN)
     .map(({ node }) => node)[0]
 
   return (
     <div
+      className ="about"
       style={{
         marginLeft: `auto`,
         marginRight: `auto`,
-        maxWidth: rhythm(24),
+        maxWidth: rhythm(36),
         padding: `${rhythm(0.5)} ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(
           3 / 4
         )}`,
